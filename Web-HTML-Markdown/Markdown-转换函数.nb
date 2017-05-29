@@ -1,0 +1,200 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.1' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      8927,        190]
+NotebookOptionsPosition[      8370,        169]
+NotebookOutlinePosition[      8727,        185]
+CellTagsIndexPosition[      8684,        182]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", "Markdown", "*)"}], "\[IndentingNewLine]", 
+  RowBox[{"(*", 
+   RowBox[{
+   "\:8868\:683c\:8f6c\:6362\:51fd\:6570", "\:ff1a", 
+    "\:5206\:522b\:8f93\:5165\:8868\:683c\:6807\:9898\:548c\:8868\:683c\:4f53\
+\:90e8", "\:ff0c", "\:5f97\:5230Markdown\:683c\:5f0f\:7684\:8868\:683c"}], 
+   "*)"}], "\[IndentingNewLine]", 
+  RowBox[{"(*", 
+   RowBox[{
+   "\:5176\:4e2d\:8868\:683c\:6807\:9898", "\:ff0c", 
+    "\:53ef\:4ee5\:662f\:5217\:8868\:4e5f\:53ef\:4ee5\:662f\:5b57\:7b26\:4e32\
+"}], "*)"}], "\[IndentingNewLine]", 
+  RowBox[{"(*", 
+   RowBox[{"\:5206\:9694\:7b26", "\:ff1a", "\:5236\:8868\:7b26"}], "*)"}], 
+  "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{"mdTable", "[", 
+    RowBox[{"title_", ",", "body_"}], "]"}], ":=", 
+   RowBox[{"Module", "[", 
+    RowBox[{
+     RowBox[{"{", "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"nTitle", "=", 
+        RowBox[{"If", "[", 
+         RowBox[{
+          RowBox[{"ListQ", "[", "title", "]"}], ",", "\[IndentingNewLine]", 
+          RowBox[{
+           RowBox[{
+            RowBox[{"StringReplace", "[", 
+             RowBox[{"#", ",", 
+              RowBox[{"\"\<|\>\"", "\[Rule]", "\"\<\\|\>\""}]}], "]"}], "&"}],
+            "/@", "title"}], ",", 
+          RowBox[{"StringSplit", "[", 
+           RowBox[{
+            RowBox[{"StringReplace", "[", 
+             RowBox[{"title", ",", 
+              RowBox[{"\"\<|\>\"", "\[Rule]", "\"\<\\|\>\""}]}], "]"}], ",", 
+            "\"\<\\t\>\""}], "]"}]}], "]"}]}], ",", "\[IndentingNewLine]", 
+       RowBox[{"nBody", "=", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"StringSplit", "[", 
+           RowBox[{"#", ",", "\"\<\\t\>\""}], "]"}], "&"}], "/@", 
+         RowBox[{"StringSplit", "[", 
+          RowBox[{
+           RowBox[{"StringReplace", "[", 
+            RowBox[{"body", ",", 
+             RowBox[{"\"\<|\>\"", "\[Rule]", "\"\<\\|\>\""}]}], "]"}], ",", 
+           "\"\<\\n\>\""}], "]"}]}]}]}], "}"}], ",", "\[IndentingNewLine]", 
+     "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"StringRiffle", "[", 
+       RowBox[{"nTitle", ",", 
+        RowBox[{"{", 
+         RowBox[{"\"\<| \>\"", ",", "\"\< | \>\"", ",", "\"\< |\>\""}], 
+         "}"}]}], "]"}], "<>", "\"\<\\n\>\"", "<>", "\[IndentingNewLine]", 
+      RowBox[{"StringRiffle", "[", 
+       RowBox[{
+        RowBox[{"ConstantArray", "[", 
+         RowBox[{"\"\<---\>\"", ",", 
+          RowBox[{"Length", "[", "nTitle", "]"}]}], "]"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"\"\<| \>\"", ",", "\"\< | \>\"", ",", "\"\< |\>\""}], 
+         "}"}]}], "]"}], "<>", "\"\<\\n\>\"", "<>", "\[IndentingNewLine]", 
+      RowBox[{"StringRiffle", "[", 
+       RowBox[{"nBody", ",", "\"\<\\n\>\"", ",", 
+        RowBox[{"{", 
+         RowBox[{"\"\<| \>\"", ",", "\"\< | \>\"", ",", "\"\< |\>\""}], 
+         "}"}]}], "]"}]}]}], "\[IndentingNewLine]", "]"}]}]}]], "Input",
+ CellChangeTimes->{{3.7050301078281484`*^9, 3.705030124946353*^9}, {
+  3.7050301723172426`*^9, 3.7050304258788304`*^9}, {3.705030465990425*^9, 
+  3.7050305151905365`*^9}, {3.705030548656328*^9, 3.705030556502406*^9}, {
+  3.7050311990701313`*^9, 
+  3.7050313391434298`*^9}},ExpressionUUID->"0cc9c04c-9196-44ab-9e8d-\
+7a9b378acee4"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"mdTable", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"\"\<\:5b57\:6bb5\>\"", ",", "\"\<\:8bf4\:660e\>\""}], "}"}], 
+   ",", "\"\<AB\\tAdd Black: locations of Black stones to be placed on the \
+board prior to the first move\nAW\\tAdd White: locations of White stones to \
+be placed on the board prior to the first move.\nAN\\tAnnotations: name of \
+the person commenting the game.\nAP\\tApplication: application that was used \
+to create the SGF file (e.g. CGOban2,...).\nB\\ta move by Black at the \
+location specified by the property value.\nBR\\tBlack Rank: rank of the Black \
+player.\nBT\\tBlack Team: name of the Black team.\nC\\tComment: a comment.\n\
+CP\\tCopyright: copyright information.\nDT\\tDate: date of the game.\n\
+EV\\tEvent: name of the event (e.g. 58th Honinb\:014d Title Match).\n\
+FF\\tFile format: version of SGF specification governing this SGF file.\n\
+GM\\tGame: type of game represented by this SGF file. A property value of 1 \
+refers to Go.\nGN\\tGame Name: name of the game record.\nHA\\tHandicap: the \
+number of handicap stones given to Black. Placement of the handicap stones \
+are set using the AB property.\nKM\\tKomi: komi.\nON\\tOpening: information \
+about the opening (Fuseki), rarely used in any file.\nOT\\tOvertime: overtime \
+system.\nPB\\tBlack Name: name of the black player.\nPC\\tPlace: place where \
+the game was played (e.g.: Tokyo).\nPL\\tPlayer: color of player to start.\n\
+PW\\tWhite Name: name of the white player.\nRE\\tResult: result, usually in \
+the format \\\"B+R\\\" (Black wins by resign) or \\\"B+3.5\\\" (black wins by \
+3.5).\nRO\\tRound: round (e.g.: 5th game).\nRU\\tRules: ruleset (e.g.: \
+Japanese).\nSO\\tSource: source of the SGF file.\nSZ\\tSize: size of the \
+board, non-square boards are supported.\nTM\\tTime limit: time limit in \
+seconds.\nUS\\tUser: name of the person who created the SGF file.\nW\\ta move \
+by White at the location specified by the property value.\nWR\\tWhite Rank: \
+rank of the White player.\nWT\\tWhite Team: name of the White team.\>\""}], 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.705030430877885*^9, 3.7050304456064053`*^9}, {
+  3.705030505789853*^9, 
+  3.7050305356806035`*^9}},ExpressionUUID->"a510f4ec-d2f6-4cab-b302-\
+be7c89b9fd21"],
+
+Cell[BoxData["\<\"| \:5b57\:6bb5 | \:8bf4\:660e |\\n| --- | --- |\\n| AB | \
+Add Black: locations of Black stones to be placed on the board prior to the \
+first move |\\n| AW | Add White: locations of White stones to be placed on \
+the board prior to the first move. |\\n| AN | Annotations: name of the person \
+commenting the game. |\\n| AP | Application: application that was used to \
+create the SGF file (e.g. CGOban2,...). |\\n| B | a move by Black at the \
+location specified by the property value. |\\n| BR | Black Rank: rank of the \
+Black player. |\\n| BT | Black Team: name of the Black team. |\\n| C | \
+Comment: a comment. |\\n| CP | Copyright: copyright information. |\\n| DT | \
+Date: date of the game. |\\n| EV | Event: name of the event (e.g. 58th Honinb\
+\:014d Title Match). |\\n| FF | File format: version of SGF specification \
+governing this SGF file. |\\n| GM | Game: type of game represented by this \
+SGF file. A property value of 1 refers to Go. |\\n| GN | Game Name: name of \
+the game record. |\\n| HA | Handicap: the number of handicap stones given to \
+Black. Placement of the handicap stones are set using the AB property. |\\n| \
+KM | Komi: komi. |\\n| ON | Opening: information about the opening (Fuseki), \
+rarely used in any file. |\\n| OT | Overtime: overtime system. |\\n| PB | \
+Black Name: name of the black player. |\\n| PC | Place: place where the game \
+was played (e.g.: Tokyo). |\\n| PL | Player: color of player to start. |\\n| \
+PW | White Name: name of the white player. |\\n| RE | Result: result, usually \
+in the format \\\"B+R\\\" (Black wins by resign) or \\\"B+3.5\\\" (black wins \
+by 3.5). |\\n| RO | Round: round (e.g.: 5th game). |\\n| RU | Rules: ruleset \
+(e.g.: Japanese). |\\n| SO | Source: source of the SGF file. |\\n| SZ | Size: \
+size of the board, non-square boards are supported. |\\n| TM | Time limit: \
+time limit in seconds. |\\n| US | User: name of the person who created the \
+SGF file. |\\n| W | a move by White at the location specified by the property \
+value. |\\n| WR | White Rank: rank of the White player. |\\n| WT | White \
+Team: name of the White team. |\"\>"], "Output",
+ CellChangeTimes->{{3.7050305372191973`*^9, 
+  3.7050305587850285`*^9}},ExpressionUUID->"af88febf-3db1-46ac-ac8f-\
+81ad5483da63"]
+}, Open  ]]
+},
+WindowSize->{759, 833},
+WindowMargins->{{Automatic, 572}, {64, Automatic}},
+FrontEndVersion->"11.1 for Microsoft Windows (64-bit) (2017\:5e744\:670818\
+\:65e5)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 3225, 76, 278, "Input", "ExpressionUUID" -> \
+"0cc9c04c-9196-44ab-9e8d-7a9b378acee4"],
+Cell[CellGroupData[{
+Cell[3808, 100, 2263, 34, 719, "Input", "ExpressionUUID" -> \
+"a510f4ec-d2f6-4cab-b302-be7c89b9fd21"],
+Cell[6074, 136, 2280, 30, 772, "Output", "ExpressionUUID" -> \
+"af88febf-3db1-46ac-ac8f-81ad5483da63"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
+
